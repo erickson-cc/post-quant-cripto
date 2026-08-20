@@ -16,7 +16,7 @@ Usa duas Chaves, uma pública e outra privada.
 
 
 # Criptografia baseada em HASH
-Os algoritmos criptográficos baseados em HASH são unidirecionais, para descriptografar um resumo criptográfico é necessário uma chave. 
+Os algoritmos criptográficos baseados em HASH são unidirecionais, para descriptografar um resumo criptográfico é necessário uma chave. Na verdade eles não são descriptografados nunca pois hashs são funções irreversíveis, a verificação acontece recalculando o hash da mensagem e comparando os resumos.
 
 Um esquema de assinaturas consiste em três algoritmos:
 = 
@@ -36,15 +36,23 @@ Como são unidirecionais, só podem ser quebrados através de brute-force. Um co
 
 O algoritmo de Grover (estudar sobre ele) só consegue reduzir a segurança da chave pela metade, um Hash SHA-256 atacado por um computador quântico oferece a mesma segurança que um hash de 128 bits. Resumindo, o algoritmo de Shor é um atalho que permite que um computador consiga consiga resolver a matemática da criptografia rapidamente, uma criptografia pós-quântica impede esse atalho e força o computador quântico a quebrar o código usando força-bruta (apenas usando chaves maiores?).
 
+O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, reduzindo a complexidade temporal da força bruta de $O(N)$ para $O(\sqrt{N})$. Ao usar SHA-256, a complexidade cai para $\sqrt{2^{256}}$, o que resulta em $2^{128}$ operações (equivalente à segurança de 128 bits).
+
 ## Assinatura de Lamport
 - Assinatura de uso único
 
 ## WOTS
 - Assinatura de uso único
-- Cadeias de hash
+- Cadeias de hash consecutivas para assinar múltiplos bits simultaneamente, comprimindo o tamanho da Public Key.
 
 ## Merkle Trees
 - Estrutura de árvore
 - Cada folha passa por uma função de hash
+- Chaves WOTS são colocadas nas folhas (milhares)
+- A raiz funciona como chave mestra
 
 ## XMSS (NIST SP 800-208)
+- Padronização formal do híbrido entre WOTS e Merkle Tree.
+- Stateful
+- Não se reutiliza chaves WOTS
+- Proteção contra colisões
