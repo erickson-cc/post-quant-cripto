@@ -9,24 +9,29 @@ Processo de criptografar informação.
 ## Criptoanálise
 Processo de descriptografar informação.
 
-# Criptografia Simétrica
+# Criptografia Simétrica (EXPANDIR)
 Duas partes (A e B) querem se comunicar através de um canal aberto (inseguro). A criptografa a mensagem antes de entrar no canal e B deve descriptografar a mensagem após sair do canal. Portanto, temos duas funções, a de criptografar e a de descriptografar. Enquanto a mensagem criptografada passa por um canal inseguro, a chave para rodar as funções é passada por um canal seguro.
-# Criptografia Assimétrica (PKc)
-Usa duas Chaves, uma pública e outra privada.
+(Colocar AES explicação)
+(Como usar Simétrica para confidencialidade da mensagem)
 
+# Criptografia Assimétrica (PKc) (EXPANDIR)
+Usa duas Chaves, uma pública e outra privada.
+(Após definida a simétrica, se aprofundar na assimétrica)
+(Definir Assinatura digital)
+(Definir encapsulamento de chaves)[chave pré compartilhada e reutilizar num mecanismo simético??]
 
 # Criptografia baseada em HASH
 Os algoritmos criptográficos baseados em HASH são unidirecionais, para descriptografar um resumo criptográfico é necessário uma chave. Na verdade eles não são descriptografados nunca pois hashs são funções irreversíveis, a verificação acontece recalculando o hash da mensagem e comparando os resumos.
 
 Um esquema de assinaturas consiste em três algoritmos:
 = 
-# Geração da chave
+# Geração da chave (Aprofundar)
 Produz o par de chaves pública/privada.
 
-# Geração da assinatura
+# Geração da assinatura (Aprofundar)
 A mensagem do remetente é assinada usando a chave privada.
 
-# Verificação da assinatura
+# Verificação da assinatura (Aprofundar)
 O remetente usa a chave pública para verificar a integridade da mensagem assinada.
 
 Como são unidirecionais, só podem ser quebrados através de brute-force. Um computador quântico consegue acelerar esse processo, portanto, foram desenvolvidos algoritmos de criptografia baseados em HASH que são resistentes ao cenário pós-quântico. Para isso, usam chaves públicas e assinaturas exageradamente longas.
@@ -38,8 +43,12 @@ O algoritmo de Grover (estudar sobre ele) só consegue reduzir a segurança da c
 
 O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, reduzindo a complexidade temporal da força bruta de $O(N)$ para $O(\sqrt{N})$. Ao usar SHA-256, a complexidade cai para $\sqrt{2^{256}}$, o que resulta em $2^{128}$ operações (equivalente à segurança de 128 bits).
 
-## Assinatura de Lamport
+## Assinatura de Lamport (Aprofundar e fazer na mão usando uma função de hash simples [mod ou shift])
+(Descrever a assinatura do lamport e mostrar o exemplo manual)
 - Assinatura de uso único
+- só serve para assinatura digital (autenticação)
+- não serve para encapsular chaves (confidencialidade)
+
 
 ## WOTS
 - Assinatura de uso único
@@ -56,3 +65,6 @@ O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, r
 - Stateful
 - Não se reutiliza chaves WOTS
 - Proteção contra colisões
+
+Estudar RSA para próxima reunião
+
