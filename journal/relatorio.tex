@@ -36,6 +36,20 @@ A criptografia assimétrica, ou criptografia de chave pública, usa duas chaves.
 \section{Criptografia Baseada em Hash}
 Os algoritmos criptográficos baseados em HASH são unidirecionais. Eles nunca são descriptografados pois hashs são funções irreversíveis, a verificação acontece recalculando o hash da mensagem e comparando os resumos.
 
+\subsection{Funções Hash}
+A função hash $H$, de $n$ bits, mapeia uma mensagem binária de grande tamanho (notação: $x = \{0,1\}^{\leq L}$ ou $x = \{0,1\}^{*}$) em um resumo criptográfico $H(x)$ de menor tamanho ($n = 256$). O hash consegue ser computado com mais eficiência que a mensagem inteira. A descrição da função hash é pública e fixa, portanto $H$ não tem chaves privadas.
+
+As funções hashes possuem três propriedades de segurança:
+\begin{itemize}
+	\item \textbf{Preimage Resistance:} tendo um hash criptográfico $y$, é impossível encontrar a mensagem $x$ para a função $H(x) = y$.
+	\item \textbf{Second Preimage Resistance:} tendo verificado um bit $x$ da mensagem, é impossível encontrar outro bit $x'$ com $x\neq x'$ e $H(x) = H(x')$
+	\item \textbf{Collision Resistance:} impossível encontrar duas mensagens $x$ e $x'$ que possuam o mesmo resumo criptográfico.
+\end{itemize}
+Com $x \in \{0,1\}^*$ e $y \in \{0,1\}^n$.
+
+Preimage resistance e $2^{nd}$ preimage resistance levam $2^n$ operações para serem quebradas com computação clássica, a computação quântica do Algoritmo de Grover consegue reduzir esse número para $2^{n/2}$. Já a identificação de colisão leva $2^{n/2}$ tanto com computadores clássicos quanto quânticos.
+
+
 \section{Assinatura}
 Um esquema de assinatura consiste em três algoritmos:
 \begin{enumerate}
@@ -49,6 +63,7 @@ Para não assinar a mensagem inteira, o que demandaria excesso de processamento,
 Como funções Hash são unidirecionais, só podem ser quebrados através de brute-force. Um computador quântico consegue acelerar esse processo, portanto, foram desenvolvidos algoritmos de criptografia baseados em HASH que são resistentes ao cenário pós-quântico. Para isso, usam chaves públicas e assinaturas exageradamente longas.
 
 \subsection{Assinatura de Lamport}
+One-Time Signature Scheme
 \subsection{WOTS}
 \subsection{Merkle Trees}
 \subsection{XMSS (NIST SP 800-208)}
