@@ -1,0 +1,62 @@
+\documentclass[12pt, a4paper]{article}
+
+% --- Pacotes Básicos ---
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage[main=brazilian, english]{babel}
+\usepackage{indentfirst}
+\usepackage{geometry}
+\geometry{left=3cm, top=3cm, right=2cm, bottom=2cm}
+
+% --- Informações do Documento ---
+\title{Estudos em Criptografia Pós-Quântica}
+\author{Erickson G. Müller}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty} % primeira página não tem número.
+
+
+\section{Criptografia}
+A criptografia é o processo de transformar uma mensagem legível em uma mensagem cifrada. Essa mensagem só poderia ser descriptografada com o uso de uma chave criptográfica, garantindo assim confidencialidade à mensagem. Também é usada para autenticidade, por meio da assinatura digital.Uma chave criptográfica pode ser simétrica ou assimétrica.
+
+\subsection{Criptografia Simétrica}
+Duas partes (A e B) querem se comunicar através de um canal aberto (inseguro). A criptografa a mensagem antes de entrar no canal e B deve descriptografar a mensagem após sair do canal. Portanto, temos duas funções, a de criptografar e a de descriptografar. Enquanto a mensagem criptografada passa por um canal inseguro, a chave para rodar as funções é passada por um canal seguro.
+
+\begin{center}
+\includegraphics[scale=0.25]{images/symmetric-encryption-816386435.jpg}
+\end{center}
+
+\subsection{Criptografia Assimétrica}
+A criptografia assimétrica, ou criptografia de chave pública, usa duas chaves. Para confidencialidade, a informação é criptografada com a chave pública do destinatário e só pode ser descriptografada pelo destinatário usando a própria chave privada. Para autenticidade e integridade, utiliza-se a assinatura digital em que a mensagem é assinada com a chave privada do remetente e a verificação é feita com a chave pública do remetente.
+
+%\section{AES}
+\section{Criptografia Baseada em Hash}
+Os algoritmos criptográficos baseados em HASH são unidirecionais. Eles nunca são descriptografados pois hashs são funções irreversíveis, a verificação acontece recalculando o hash da mensagem e comparando os resumos.
+
+\section{Assinatura}
+Um esquema de assinatura consiste em três algoritmos:
+\begin{enumerate}
+	\item \textbf{Geração das chaves:} o sistema gera o par de chaves matematicamente ligadas. A chave privada é mantida com o proprietário e a chave pública é disponibilizada publicamente para verificar as assinaturas.
+	\item \textbf{Geração da assinatura:} o remetente utiliza sua chave privada e a mensagem a ser assinada para calcular a assinatura ($\sigma$).
+	\item \textbf{Verificação da assinatura:} quem recebe a mensagem usa a chave pública do rementente para verificar a assinatura da mensagem. O cálculo é feito usando a assinatura, a chave pública e a mensagem.
+\end{enumerate}
+
+Para não assinar a mensagem inteira, o que demandaria excesso de processamento, a mensagem é passada por uma função de Hash que gera um resumo criptográfico de tamanho fixo (ver SHA-256). A chave privada assina apenas esse resumo, se a mensagem for alterada, o hash é alterado e a assinatura é inválida.
+
+Como funções Hash são unidirecionais, só podem ser quebrados através de brute-force. Um computador quântico consegue acelerar esse processo, portanto, foram desenvolvidos algoritmos de criptografia baseados em HASH que são resistentes ao cenário pós-quântico. Para isso, usam chaves públicas e assinaturas exageradamente longas.
+
+\subsection{Assinatura de Lamport}
+\subsection{WOTS}
+\subsection{Merkle Trees}
+\subsection{XMSS (NIST SP 800-208)}
+
+%\section{RSA}
+%\section{Curvas Elípticas}
+
+%\subsection{Algoritmo de SHOR}
+%\subsection{Algoritmo de Grover}
+
+\end{document}

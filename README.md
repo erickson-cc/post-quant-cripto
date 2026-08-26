@@ -11,14 +11,21 @@ Processo de descriptografar informação.
 
 # Criptografia Simétrica (EXPANDIR)
 Duas partes (A e B) querem se comunicar através de um canal aberto (inseguro). A criptografa a mensagem antes de entrar no canal e B deve descriptografar a mensagem após sair do canal. Portanto, temos duas funções, a de criptografar e a de descriptografar. Enquanto a mensagem criptografada passa por um canal inseguro, a chave para rodar as funções é passada por um canal seguro.
-(Colocar AES explicação)
 (Como usar Simétrica para confidencialidade da mensagem)
+
 
 # Criptografia Assimétrica (PKc) (EXPANDIR)
 Usa duas Chaves, uma pública e outra privada.
 (Após definida a simétrica, se aprofundar na assimétrica)
 (Definir Assinatura digital)
 (Definir encapsulamento de chaves)[chave pré compartilhada e reutilizar num mecanismo simético??]
+
+#AES
+(Colocar AES explicação)
+128 bits (4x4 bytes)
+Substitution (SubBytes)
+Permutation (Shift Rows & Mix Columns)
+Cada round substitution+permutation tem uma chave
 
 # Criptografia baseada em HASH
 Os algoritmos criptográficos baseados em HASH são unidirecionais, para descriptografar um resumo criptográfico é necessário uma chave. Na verdade eles não são descriptografados nunca pois hashs são funções irreversíveis, a verificação acontece recalculando o hash da mensagem e comparando os resumos.
@@ -67,4 +74,5 @@ O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, r
 - Proteção contra colisões
 
 Estudar RSA para próxima reunião
+Estudar Curvas Elípticas
 
