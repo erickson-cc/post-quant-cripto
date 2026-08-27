@@ -76,3 +76,7 @@ O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, r
 Estudar RSA para próxima reunião
 Estudar Curvas Elípticas
 
+# Próximo encontro
+Separar no exemplo o que é geração de chaves, geração de assinatura e verificação
+Estudar Arvores de Merkle
+
