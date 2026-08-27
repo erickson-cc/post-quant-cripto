@@ -65,6 +65,30 @@ Como funções Hash são unidirecionais, só podem ser quebrados através de bru
 \subsection{Assinatura de Lamport}
 One-Time Signature Scheme
 
+\begin{verbatim}
+mensagem: m = "xyz"
+hash: 1 0 1 1 0 0 0 1
+\end{verbatim}
+\includegraphics[scale=0.5]{images/lampsigntable.png}\\
+Assinatura: [$x_{11},x_{20},x_{31},x_{41},x_{50},x_{60},x_{70},x_{81}$]
+$$H(x) = n<0-3> \oplus n<4-7> | i<4$$
+$$H(x) = !(n<0-3> \oplus n<4-7>) | i\geq4$$
+\begin{verbatim}
+x11 = 00000001    y11 = 0001
+x20 = 11111101    y20 = 0010
+x31 = 00000100    y31 = 0100
+x41 = 00001000    y41 = 1000
+x50 = 11101111    y50 = 1110
+x60 = 11011111    y60 = 1101
+x70 = 10111111    y70 = 1011
+x81 = 10000000    y81 = 0111
+\end{verbatim}
+
+Para verificar a assinatura, o destinatário vai receber a mensagem, a função hash e o conjunto total de chaves públicas.
+
+Aplica a função hash na mensagem e solicita as chaves privadas de acordo com os bits de $H(m)$.
+
+Aplica a função hash na assinatura e compara com as chaves privadas.
 
 
 
