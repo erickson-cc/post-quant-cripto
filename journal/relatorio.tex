@@ -64,6 +64,10 @@ Como funções Hash são unidirecionais, só podem ser quebrados através de bru
 
 \subsection{Assinatura de Lamport}
 One-Time Signature Scheme
+
+
+
+
 \subsection{WOTS}
 \subsection{Merkle Trees}
 \subsection{XMSS (NIST SP 800-208)}
@@ -71,7 +75,12 @@ One-Time Signature Scheme
 %\section{RSA}
 %\section{Curvas Elípticas}
 
-%\subsection{Algoritmo de SHOR}
-%\subsection{Algoritmo de Grover}
+\section{Algoritmo de SHOR}
+É usado pelos computadores quânticos para quebrar mensagens criptografadas por algoritmos convencionais. As criptografias pós-quânticas usam reticulados, hashs ou um sistema híbrido de equações para que o algoritmo de shor seja inútil para computadores quânticos. Obviamente quebrar com força-bruta usando um computador quântico seria mais rápido que usando paralelismo nos melhores computadores possíveis. 
+
+\section{Algoritmo de Grover}
+O algoritmo de Grover (estudar sobre ele) só consegue reduzir a segurança da chave pela metade, um Hash SHA-256 atacado por um computador quântico oferece a mesma segurança que um hash de 128 bits. Resumindo, o algoritmo de Shor é um atalho que permite que um computador consiga consiga resolver a matemática da criptografia rapidamente, uma criptografia pós-quântica impede esse atalho e força o computador quântico a quebrar o código usando força-bruta (apenas usando chaves maiores?).
+
+O Algoritmo de Grover atua sobre a busca em bancos de dados não estruturados, reduzindo a complexidade temporal da força bruta de $O(N)$ para $O(\sqrt{N})$. Ao usar SHA-256, a complexidade cai para $\sqrt{2^{256}}$, o que resulta em $2^{128}$ operações (equivalente à segurança de 128 bits).
 
 \end{document}
