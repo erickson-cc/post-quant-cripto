@@ -65,14 +65,17 @@ Como funções Hash são unidirecionais, só podem ser quebrados através de bru
 \subsection{Assinatura de Lamport}
 One-Time Signature Scheme
 
-\begin{verbatim}
-mensagem: m = "xyz"
-hash: 1 0 1 1 0 0 0 1
-\end{verbatim}
-\includegraphics[scale=0.5]{images/lampsigntable.png}\\
-Assinatura: [$x_{11},x_{20},x_{31},x_{41},x_{50},x_{60},x_{70},x_{81}$]
+\begin{center}
+	\textbf{GERAÇÃO DE CHAVES}
+\end{center}
+As chaves privadas são sequências aleatórias de 8 bits. As chaves públicas foram criptografadas a partir da seguinte regra:
 $$H(x) = n<0-3> \oplus n<4-7> | i<4$$
 $$H(x) = !(n<0-3> \oplus n<4-7>) | i\geq4$$
+
+Como o sistema trabalha com hash de 8 bit-s essas são as chaves criptográficas.
+\begin{center}
+\includegraphics[scale=0.5]{images/lampsigntable.png}\\
+\end{center}
 \begin{verbatim}
 x11 = 00000001    y11 = 0001
 x20 = 11111101    y20 = 0010
@@ -83,6 +86,20 @@ x60 = 11011111    y60 = 1101
 x70 = 10111111    y70 = 1011
 x81 = 10000000    y81 = 0111
 \end{verbatim}
+
+\begin{center}
+	\textbf{GERAÇÃO DE ASSINATURA}
+\end{center}
+A partir da mensagem e de seu resumo hash, foram selecionadas as chaves privadas correspondentes a cada bit, que passam a formar a assinatura.
+\begin{verbatim}
+mensagem: m = "xyz"
+hash: 1 0 1 1 0 0 0 1
+\end{verbatim}
+Assinatura: [$x_{11},x_{20},x_{31},x_{41},x_{50},x_{60},x_{70},x_{81}$]
+
+\begin{center}
+	\textbf{VERIFICAÇÃO DE ASSINATURA}
+\end{center}
 
 Para verificar a assinatura, o destinatário vai receber a mensagem, a função hash e o conjunto total de chaves públicas.
 

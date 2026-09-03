@@ -77,6 +77,6 @@ Estudar RSA para próxima reunião
 Estudar Curvas Elípticas
 
 # Próximo encontro
-Separar no exemplo o que é geração de chaves, geração de assinatura e verificação
-Estudar Arvores de Merkle
+- [x] Separar no exemplo o que é geração de chaves, geração de assinatura e verificação 
+- [ ] Estudar Arvores de Merkle
 
