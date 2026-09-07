@@ -68,6 +68,7 @@ One-Time Signature Scheme
 \begin{center}
 	\textbf{GERAÇÃO DE CHAVES}
 \end{center}
+
 As chaves privadas são sequências aleatórias de 8 bits. As chaves públicas foram criptografadas a partir da seguinte regra:
 $$H(x) = n<0-3> \oplus n<4-7> | i<4$$
 $$H(x) = !(n<0-3> \oplus n<4-7>) | i\geq4$$
@@ -76,6 +77,7 @@ Como o sistema trabalha com hash de 8 bit-s essas são as chaves criptográficas
 \begin{center}
 \includegraphics[scale=0.5]{images/lampsigntable.png}\\
 \end{center}
+
 \begin{verbatim}
 x11 = 00000001    y11 = 0001
 x20 = 11111101    y20 = 0010
@@ -90,6 +92,7 @@ x81 = 10000000    y81 = 0111
 \begin{center}
 	\textbf{GERAÇÃO DE ASSINATURA}
 \end{center}
+
 A partir da mensagem e de seu resumo hash, foram selecionadas as chaves privadas correspondentes a cada bit, que passam a formar a assinatura.
 \begin{verbatim}
 mensagem: m = "xyz"
@@ -111,7 +114,31 @@ Aplica a função hash na assinatura e compara com as chaves privadas.
 
 \subsection{WOTS}
 \subsection{Merkle Trees}
-Para verificar a integridade de grandes conjuntos de dados, pode-se usar essa estrutura.
+Para verificar a integridade de grandes conjuntos de dados, pode-se usar essa estrutura. Cada nó folha possui um hash criptográfico de um bloco de dados, dois nós-irmãos são concatenados e criptografados novamente para formar o nó-pai, até chegar na raiz da árvore de merkle que possui um único hash de toda a base de dados.
+$$hash(hash(A) || hash(B)) \to hash(A) \& hash(B)$$
+
+Essa estrutura acelera a verificação de integridade pois, na etapa de verificação de assinatura, o verificador não vai precisar calcular a função hash de todos os blocos de dados, ele pode percorrer da raiz até o nó-folha adulterado com o número de \textit(checsums) correspondentes à altura da árvore.
+
+Por esse motivo, a merkle tree é utilizada em sistemas de versionamento, protocolos P2P e blockchains.
+
+\begin{center}
+\includegraphics[scale=0.55]{images/merkle.jpg}
+\end{center}
+
+A Merkle Tree tenta ser uma árvore balanceada, existem muitas formas de solucionar o problema de blocos ímpares, como duplicar os nós no mesmo nível ou copiar o nó folha até a raiz. Conforme imagens abaixo:
+\begin{center}
+%\includegraphics[scale=0.55]{images/unbalanced-merkle.jpg}
+\includegraphics[scale=0.35]{images/unbalanced-merkle.jpg}
+\includegraphics[scale=0.28]{images/unbalanced-merkleII.png}
+\end{center}
+%\begin{center}
+%\includegraphics[scale=0.45]{images/unbalanced-merkleII.png}
+%\end{center}
+
+A hierarquização, que a estrutura de árvore oferece, permite que seja viável a distribuição de uma blockchain por todos os usuários. Cada usuário do bitcoin possui apenas o nó do seu próprio bloco como nó-raiz da árvore (um arquivo de 4Mb), corretoras e mineradores mantêm a cópia completa da árvore em seu HD (ultrapassa 500 Gb), outros operadores que validam as transações possuem os nós podados da blockchain, eliminando os galhos após a verificação de integridade (cerca de 5 a 10 Gb).
+
+Como a Assinatura de Lamport é uma One-Time Signature Scheme, a árvore de merkle é ótima para se utilizar sem precisar renovar a assinatura toda vez que metade das chaves privadas for revelada após uma verificação. Para isso, gera-se uma árvore de merkle com múltiplas assinaturas, provenientes de matrizes de hashes diferentes. Toda vez que a assinatura é verificada, o verificador descarta o caminho do nó-folha de índice $i$ e o próximo índice para verificar a assinatura é $i+1$, até esgotar a árvore.
+
 \subsection{XMSS (NIST SP 800-208)}
 
 %\section{RSA}
