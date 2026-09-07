@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  2 SEP 2026 21:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  7 SEP 2026 01:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -136,10 +136,7 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
 )
-(./relatorio.aux
-Package babel Info: 'brazilian' activates 'portuges' shorthands.
-(babel)             Reported on input line 5.
-)
+(./relatorio.aux)
 \openout1 = `relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -178,6 +175,9 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package babel Info: 'brazilian' activates 'portuges' shorthands.
+(babel)             Reported on input line 17.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -249,7 +249,7 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  3335 strings out of 469495
  54776 string characters out of 5470098
- 476300 words of memory out of 5000000
+ 476309 words of memory out of 5000000
  31978 multiletter control sequences out of 15000+600000
  637420 words of font info for 61 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
@@ -265,7 +265,7 @@ lic/cm-super/sfbx1728.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sf
 rm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on relatorio.pdf (4 pages, 258361 bytes).
+Output written on relatorio.pdf (4 pages, 258519 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  54 compressed objects within 1 object stream
