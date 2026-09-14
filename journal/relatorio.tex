@@ -2,6 +2,7 @@
 
 % --- Pacotes Básicos ---
 \usepackage[utf8]{inputenc}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
 \usepackage[main=brazilian, english]{babel}
@@ -63,7 +64,7 @@ Para não assinar a mensagem inteira, o que demandaria excesso de processamento,
 Como funções Hash são unidirecionais, só podem ser quebrados através de brute-force. Um computador quântico consegue acelerar esse processo, portanto, foram desenvolvidos algoritmos de criptografia baseados em HASH que são resistentes ao cenário pós-quântico. Para isso, usam chaves públicas e assinaturas exageradamente longas.
 
 \subsection{Assinatura de Lamport}
-One-Time Signature Scheme
+One-Time Signature Scheme: o usuário deve usar a chave privada apenas uma vez. Cada uso da assinatura revela metade das chaves privadas, permitindo que um atacante falsifique uma assinatura.
 
 \begin{center}
 	\textbf{GERAÇÃO DE CHAVES}
@@ -110,16 +111,14 @@ Aplica a função hash na mensagem e solicita as chaves privadas de acordo com o
 
 Aplica a função hash na assinatura e compara com as chaves privadas.
 
-
-
-\subsection{WOTS}
 \subsection{Merkle Trees}
 Para verificar a integridade de grandes conjuntos de dados, pode-se usar essa estrutura. Cada nó folha possui um hash criptográfico de um bloco de dados, dois nós-irmãos são concatenados e criptografados novamente para formar o nó-pai, até chegar na raiz da árvore de merkle que possui um único hash de toda a base de dados.
-$$hash(hash(A) || hash(B)) \to hash(A) \& hash(B)$$
+$$hash(_{hash(A) || hash(B)}) \to hash(A)$$
+$$hash(_{hash(A) || hash(B)}) \to hash(B)$$
 
-Essa estrutura acelera a verificação de integridade pois, na etapa de verificação de assinatura, o verificador não vai precisar calcular a função hash de todos os blocos de dados, ele pode percorrer da raiz até o nó-folha adulterado com o número de \textit(checsums) correspondentes à altura da árvore.
+Essa estrutura acelera a verificação de integridade pois, na etapa de verificação de assinatura, o verificador não vai precisar calcular a função hash de todos os blocos de dados, ele pode percorrer da raiz até o nó-folha adulterado com o número de \textit{checksums} correspondentes à altura da árvore.
 
-Por esse motivo, a merkle tree é utilizada em sistemas de versionamento, protocolos P2P e blockchains.
+Por esse motivo, a merkle tree é utilizada em sistemas de versionamento, protocolos P2P e blockchains. A Árvore de Merkle desempenha uma função muito importante para utilizar assinaturas de uso únicos diversas vezes.
 
 \begin{center}
 \includegraphics[scale=0.55]{images/merkle.jpg}
@@ -139,6 +138,43 @@ A hierarquização, que a estrutura de árvore oferece, permite que seja viável
 
 Como a Assinatura de Lamport é uma One-Time Signature Scheme, a árvore de merkle é ótima para se utilizar sem precisar renovar a assinatura toda vez que metade das chaves privadas for revelada após uma verificação. Para isso, gera-se uma árvore de merkle com múltiplas assinaturas, provenientes de matrizes de hashes diferentes. Toda vez que a assinatura é verificada, o verificador descarta o caminho do nó-folha de índice $i$ e o próximo índice para verificar a assinatura é $i+1$, até esgotar a árvore.
 
+\subsection{WOTS}
+Assim com o a \textit{Assinatura de Lamport}, a assinatura \textit{Winternitz One-Time Signature} também é construída no princípio de assinatura de uso único. Caso assinássemos duas mensagens diferentes com a mesma chave privada, ao verificar a assinatura, é possível revelar partes distintas da cadeia de hash, comprometendo a inforjabilidade da assinatura.
+
+\textbf{Winternitz Parameter (w)}: representa o número de bits processados pela função hash. Quanto maior o parâmetro $w$, menor o tamanho da assinatura, porém o custo de processamento será maior. O valor máximo $W$ é derivado do parâmetro de Winternitz e possui o valor de $W=2^w$. O número de fragmentos numa chave é dado pelo tamanho do resumo criptográficos dividido pelo parâmetro de Winternitz.
+
+\begin{center}
+	\textbf{GERAÇÃO DE CHAVES}
+	\begin{enumerate}
+		\item Gerar $L$ fragmentos aleatórios que comporão a \textbf{chave privada}.
+			\\ $sk = \{f_0,f_1,f_2...,f_L\}$
+		\item Para cada fragmento da chave privada, aplicar uma cadeia de $W$ (valor máximo) funções hash para compor a \textbf{chave pública}.
+			\\ $HashChain(f_x) = hash_W(hash_{W-1}(...(hash_1(f_x)...))$
+			\\ $pk = \{HashChain(f_0), HashChain(f_1), HashChain(f_2)..., HashChain(f_L)\}$
+	\end{enumerate}
+\end{center}
+\begin{center}
+	\textbf{GERAÇÃO DE ASSINATURA}
+	\begin{enumerate}
+		\item Fazer o resumo criptográfico ($hash(m)$) de uma mensagem, resultando numa sequência de $L$ bytes.
+		\item Calcule o valor de vezes que a função hash vai ser aplicada em cada byte.
+			\\ $IterationG = W-value(m_b)$
+		\item Aplicar ao fragmento da chave privada correspondente ao byte da mensagem uma cadeia de $IterationG$ vezes a função hash.
+			\\$WOTS=\{HashChain_{IterationG}(f_0)...,HashChain_{IterationG}(f_L)\}$
+	\end{enumerate}
+\end{center}
+\begin{center}
+	\textbf{VERIFICAÇÃO DE ASSINATURA}
+	\begin{enumerate}
+		\item Com a assinatura $WOTS$ e o resumo criptográfico da mensagem ($hash(m)$), para cada byte de ambos, determinar o valor de iterações necessárias, que vai ser igual ao valor do byte da mensagem.
+			\\ $IterationV = value(m_b)$
+		\item Aplicar ao fragmento da assinatura uma cadeia de $IterationV$ vezes a função hash.
+		\item Se todos os fragmentos corresponderem ao fragmento da chave pública, a assinatura é válida.
+	\end{enumerate}
+\end{center}
+
+\subsection{WOTS+}
+\subsection{OpenQuantumSafe}
 \subsection{XMSS (NIST SP 800-208)}
 
 %\section{RSA}

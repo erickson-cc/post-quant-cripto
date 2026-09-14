@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.25)  7 SEP 2026 16:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  14 SEP 2026 17:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -28,6 +28,28 @@ Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
 )
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+)
+(/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)
 (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -45,10 +67,7 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-
-(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-))
+)
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
 )
@@ -142,20 +161,20 @@ Package babel Info: 'brazilian' activates 'portuges' shorthands.
 )
 \openout1 = `relatorio.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
  (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count289
@@ -213,14 +232,14 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 18.
+(Font)              <14.4> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 18.
+(Font)              <7> on input line 19.
 <images/symmetric-encryption-816386435.jpg, id=1, 1260.71pt x 708.6475pt>
 File: images/symmetric-encryption-816386435.jpg Graphic file (type jpg)
 <use images/symmetric-encryption-816386435.jpg>
 Package pdftex.def Info: images/symmetric-encryption-816386435.jpg  used on inp
-ut line 29.
+ut line 30.
 (pdftex.def)             Requested size: 315.17673pt x 177.16144pt.
 [1
 
@@ -228,50 +247,50 @@ ut line 29.
 /enc/dvips/cm-super/cm-super-t1.enc} <./images/symmetric-encryption-816386435.j
 pg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 40.
+(Font)              <12> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 40.
+(Font)              <8> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 40.
+(Font)              <6> on input line 41.
  [2{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
 <images/lampsigntable.png, id=23, 566.115pt x 289.83281pt>
 File: images/lampsigntable.png Graphic file (type png)
 <use images/lampsigntable.png>
-Package pdftex.def Info: images/lampsigntable.png  used on input line 78.
+Package pdftex.def Info: images/lampsigntable.png  used on input line 79.
 (pdftex.def)             Requested size: 283.05681pt x 144.91605pt.
 
 [3 <./images/lampsigntable.png>]
 <images/merkle.jpg, id=30, 448.67625pt x 353.32pt>
 File: images/merkle.jpg Graphic file (type jpg)
 <use images/merkle.jpg>
-Package pdftex.def Info: images/merkle.jpg  used on input line 125.
+Package pdftex.def Info: images/merkle.jpg  used on input line 124.
 (pdftex.def)             Requested size: 246.77269pt x 194.3266pt.
 <images/unbalanced-merkle.jpg, id=31, 599.23875pt x 404.51125pt>
 File: images/unbalanced-merkle.jpg Graphic file (type jpg)
 <use images/unbalanced-merkle.jpg>
-Package pdftex.def Info: images/unbalanced-merkle.jpg  used on input line 131.
+Package pdftex.def Info: images/unbalanced-merkle.jpg  used on input line 130.
 (pdftex.def)             Requested size: 209.7367pt x 141.58105pt.
 <images/unbalanced-merkleII.png, id=32, 700.86844pt x 532.99126pt>
 File: images/unbalanced-merkleII.png Graphic file (type png)
 <use images/unbalanced-merkleII.png>
-Package pdftex.def Info: images/unbalanced-merkleII.png  used on input line 132
+Package pdftex.def Info: images/unbalanced-merkleII.png  used on input line 131
 .
 (pdftex.def)             Requested size: 196.24182pt x 149.23653pt.
  [4 <./images/merkle.jpg> <./images/unbalanced-merkle.jpg> <./images/unbalanced
--merkleII.png>] [5] (./relatorio.aux)
+-merkleII.png>] [5] [6] (./relatorio.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3358 strings out of 469495
- 55467 string characters out of 5470098
- 476300 words of memory out of 5000000
- 32000 multiletter control sequences out of 15000+600000
+ 3849 strings out of 469495
+ 62189 string characters out of 5470098
+ 491183 words of memory out of 5000000
+ 32481 multiletter control sequences out of 15000+600000
  638104 words of font info for 62 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 57i,6n,65p,601b,199s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,557b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/
@@ -284,10 +303,10 @@ rm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sftt1200.pfb>
-Output written on relatorio.pdf (5 pages, 543512 bytes).
+Output written on relatorio.pdf (6 pages, 571325 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 106 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
