@@ -176,6 +176,27 @@ Assim com o a \textit{Assinatura de Lamport}, a assinatura \textit{Winternitz On
 \textbf{Checksum do WOTS:} sem essa etapa, um atacante consegue forjar assinaturas, pois, ao continuar a cadeia de hashes a partir de um fragmento, o atacante consegue descobrir a cadeia de hashes de bytes menores. A função do checksum soma a diferença exata entre cada byte da mensagem e o valor máximo possível. Esse número final é convertido em blocos e assinado junto com a mensagem. Se um atacante tentar fraudar a assinatura diminuindo 1 byte da mensagem, a diferença $(W-1)-value(m_b)$ aumentará em 1. Com um checksum maior, o atacante precisaria de um fragmento de assinatura do checksum que estivesse posicionado antes na cadeia. Como o atacante só consegue avançar aplicando novos hashes e nunca retroceder, ele não tem como gerar a assinatura do novo checksum.
 
 \subsection{WOTS+}
+O principal ônus de assinatura baseadas em hash é o tamanho da assinatura.
+
+Conforme o WOTS padrão, a chave privada do WOTS+ consiste em bytes aleatórios enquanto a chave pública é uma lista desses bytes após uma certa quantidade de cadeia hash para todos eles, e a assinatura é um ponto intermediário entre a chave privada e a chave pública. O WOTS+ se diferencia do WOTS padrão pois utiliza um método diferente de iterações para gerar a assinatura sem que a função hash seja resistente a colisões.
+
+Para computar o número de fragmentos da assinatura ($L$), usa-se a seguinte função:
+
+$$l_1= \lceil \frac{m}{\log_2{(w)}} \rceil, l_2 = \lfloor \frac{\log_2{(l_1(w-1)})}{\log_2{w}}\rfloor+1, L = l_1+l_2$$
+
+Para gerar a chave secreta, o algoritmo define um tamanho de $L+w-1$ para os fragmentos aleatórios. A chave secreta consiste apenas nos primeiros $L$ fragmentos, os restantes $w-1$ são utilizados como elementos $r$ para a aleatorização de $c^i_k(x,r)$.A computação da chave pública é dada por:
+
+$$pk=(pk_0,pk_1,...,pk_L)=((r,k),c^{w-1}_k(sk_1,r),...,c^{w-1}_k(sk_L,r))$$
+
+Para a geração da assinatura, o algoritmo divide a mensagem em $L_1$ fragmentos de base $w$. Em seguida, calcula o checksum que terá no máximo $L_2$ fragmentos. Concatena em $B=(b_1, b_2,...,b_L)$ A assinatura é dada por:
+
+$$\sigma = c^{b_1}_k(sk_1,r),...,c^{b_L}_k(sk_L,r))$$
+
+sendo a função de cadeia como:
+$$c^i_k(x,r)=f_k(c^{i-1}_k(x,r) \oplus r_i)$$
+
+Essa intercalação da operação XOR com a chave de aleatorização elimina a necessidade de resistência a colisões do WOTS+.
+
 \subsection{OpenQuantumSafe}
 \subsection{XMSS (NIST SP 800-208)}
 

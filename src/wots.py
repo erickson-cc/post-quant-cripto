@@ -26,9 +26,27 @@ def SKgen(L, l1=32):
         frag = secrets.token_bytes(l1)
         secret_key.append(frag)
     return secret_key
+
 def printSK(sk):
+    print("Chave Privada:")
     i=1
     for f in sk:
+        print(f"Fragmento {i:2}: {f.hex()}")
+        i +=1
+    return
+
+def PKgen(sk, w):
+    public_key = []
+    W=(2**w)-1
+    for f in sk:
+        f_pk=hashChain(f,W)
+        public_key.append(f_pk)
+    return public_key
+
+def printPK(sk):
+    print("Chave Pública:")
+    i=1
+    for f in pk:
         print(f"Fragmento {i:2}: {f.hex()}")
         i +=1
     return
@@ -86,6 +104,11 @@ print("")
 
 print(f"Tamanho da chave privada gerada: {len(sk)} fragmentos.")
 print(f"Tamanho de cada fragmento: {len(sk[0])} bytes.")
+
+pk = PKgen(sk,w)
+print("")
+printPK(sk)
+print("")
 
 print("\n"+" "*25+"GERAÇÃO DE ASSINATURA")
 mensagem = "Hello World"
