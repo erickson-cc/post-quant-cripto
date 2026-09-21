@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  14 SEP 2026 17:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.8.25)  21 SEP 2026 01:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -286,11 +286,11 @@ L3 programming layer <2026-01-19>
 Here is how much of TeX's memory you used:
  3849 strings out of 469495
  62189 string characters out of 5470098
- 491183 words of memory out of 5000000
+ 492183 words of memory out of 5000000
  32481 multiletter control sequences out of 15000+600000
  638104 words of font info for 62 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 57i,6n,65p,557b,270s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,6n,65p,827b,274s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/
@@ -303,7 +303,7 @@ rm1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></us
 r/share/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/share/texmf-d
 ist/fonts/type1/public/cm-super/sfti1200.pfb></usr/share/texmf-dist/fonts/type1
 /public/cm-super/sftt1200.pfb>
-Output written on relatorio.pdf (6 pages, 571325 bytes).
+Output written on relatorio.pdf (6 pages, 570622 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream

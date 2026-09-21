@@ -141,7 +141,7 @@ Como a Assinatura de Lamport é uma One-Time Signature Scheme, a árvore de merk
 \subsection{WOTS}
 Assim com o a \textit{Assinatura de Lamport}, a assinatura \textit{Winternitz One-Time Signature} também é construída no princípio de assinatura de uso único. Caso assinássemos duas mensagens diferentes com a mesma chave privada, ao verificar a assinatura, é possível revelar partes distintas da cadeia de hash, comprometendo a inforjabilidade da assinatura.
 
-\textbf{Winternitz Parameter (w)}: representa o número de bits processados pela função hash. Quanto maior o parâmetro $w$, menor o tamanho da assinatura, porém o custo de processamento será maior. O valor máximo $W$ é derivado do parâmetro de Winternitz e possui o valor de $W=2^w$. O número de fragmentos numa chave é dado pelo tamanho do resumo criptográficos dividido pelo parâmetro de Winternitz.
+\textbf{Winternitz Parameter ($w$)}: representa o número de bits processados pela função hash. Quanto maior o parâmetro $w$, menor o tamanho da assinatura, porém o custo de processamento será maior. O \textbf{valor máximo} ($W$) é derivado do parâmetro de Winternitz e possui o valor de $W=2^w$\color{red}$-1$\color{black}. O número de fragmentos numa chave é dado pelo tamanho do resumo criptográficos dividido pelo parâmetro de Winternitz.
 
 \begin{center}
 	\textbf{GERAÇÃO DE CHAVES}
@@ -157,6 +157,7 @@ Assim com o a \textit{Assinatura de Lamport}, a assinatura \textit{Winternitz On
 	\textbf{GERAÇÃO DE ASSINATURA}
 	\begin{enumerate}
 		\item Fazer o resumo criptográfico ($hash(m)$) de uma mensagem, resultando numa sequência de $L$ bytes.
+		\item \textbf{Checksum do WOTS}
 		\item Calcule o valor de vezes que a função hash vai ser aplicada em cada byte.
 			\\ $IterationG = W-value(m_b)$
 		\item Aplicar ao fragmento da chave privada correspondente ao byte da mensagem uma cadeia de $IterationG$ vezes a função hash.
@@ -172,6 +173,7 @@ Assim com o a \textit{Assinatura de Lamport}, a assinatura \textit{Winternitz On
 		\item Se todos os fragmentos corresponderem ao fragmento da chave pública, a assinatura é válida.
 	\end{enumerate}
 \end{center}
+\textbf{Checksum do WOTS:} sem essa etapa, um atacante consegue forjar assinaturas, pois, ao continuar a cadeia de hashes a partir de um fragmento, o atacante consegue descobrir a cadeia de hashes de bytes menores. A função do checksum soma a diferença exata entre cada byte da mensagem e o valor máximo possível. Esse número final é convertido em blocos e assinado junto com a mensagem. Se um atacante tentar fraudar a assinatura diminuindo 1 byte da mensagem, a diferença $(W-1)-value(m_b)$ aumentará em 1. Com um checksum maior, o atacante precisaria de um fragmento de assinatura do checksum que estivesse posicionado antes na cadeia. Como o atacante só consegue avançar aplicando novos hashes e nunca retroceder, ele não tem como gerar a assinatura do novo checksum.
 
 \subsection{WOTS+}
 \subsection{OpenQuantumSafe}
