@@ -1,0 +1,25 @@
+\chapter{Infraestrutura de Chave pública}
+Um certificado digital possui o mesmo nível de confiança que a carteira de identidade. Sua principal função é garantir a autenticidade por meio da identificação digital de uma pessoa física ou jurídica. Duas entidades são necessárias para a validação de um certificado digital, a \textbf{autoridade de registro} e a \textbf{autoridade certificadora}. A primeira verifica a identidade do usuário que solicita o certificado digital, a segunda emite, armazena e assina os certificados digitais, funcionando como uma espécie de cartório digital. As autoridades certificadoras são organizadas hierarquicamente, com uma CA Raiz no topo delegando confiança para as CAs intermediárias.
+
+Para se criar um certificado digital, o usuário gera localmente um par de chaves assimétricas, em seguida, gera uma \textbf{solicitação de assinatura de certificado (CSR)}, inserindo os dados de identidade e a chave pública. Esse pacote é resumido em um hash e assinado com a chave privada. Esse resumo criptográfico assinado é enviado para a CA que valida a assinatura, confirma a identidade por meio da RA e, por fim, assina o certificado final usando a chave privada da própria CA.
+
+%\section{Algoritmos de Geração de Chaves}
+%\subsection{Criptografia de Curvas Elípticas (ECC)}
+%\subsection{Rivest-Shamir-Adleman (RSA)}
+%\subsection{Diffie-Hellman}
+\section{PKI baseada em Merkle Tree}
+Diferentemente do RSA e ECC, os algoritmos de geração de chaves de certificados de merkle, por serem baseados em hash, possuem características pós-quântica. A eficiência matemática reside na forma como a validação ocorre. Se um usuário recebe um certificado e precisa provar que a folha específica desse certificado realmente faz parte da árvore original, ele não precisa baixar a árvore inteira. A AC envia junto do certificado o caminho de autenticação e os hashes dos nós irmãos desse caminho. Complexidade logarítmica ($O\log_2{N}$), com N sendo o número de folhas.
+
+Podem ser aplicadas em esquemas stateful (LMS e XMSS) ou stateless (SLH-DSA e SPHINCS+). Os primeiros utilizam a árvore para agrupar um número finito de chaves de assinatura, cada nó é utilizado apenas uma vez, assim o sistema precisa armazenar quais nós já foram utilizados. Os segundos evitam esse problema gerando uma estrutura de árvores tão grande que a probabilidade de colisão seja quase nula.
+
+\subsection{XMSS}
+
+Possui base WOTS+, utiliza um contador de 0 até n folhas para evitar colisões. Antes de gerar o Hash, o algoritmo aplica máscaras de bit XOR sobre os nós filhos. $Hash((FilhoEsquerdo XOR Máscara1) || (FilhoDireito XOR Máscara2))$, assim, a função hash não precisa ser resistente a colisões, apenas resistente a segunda pre-imagem.
+
+O pacote da assinatura XMSS possui três elementos:
+\begin{enumerate}
+	\item índice
+	\item assinatura WOTS+ do documento
+	\item Caminho de autenticação
+\end{enumerate}
+

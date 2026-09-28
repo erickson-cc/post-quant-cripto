@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  21 SEP 2026 20:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.31)  28 SEP 2026 16:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,19 +6,20 @@ entering extended mode
 (./relatorio.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
-(/usr/share/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2025/01/22 v1.4n Standard LaTeX document class
 (/usr/share/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
-\c@section=\count276
-\c@subsection=\count277
-\c@subsubsection=\count278
-\c@paragraph=\count279
-\c@subparagraph=\count280
-\c@figure=\count281
-\c@table=\count282
+\c@chapter=\count276
+\c@section=\count277
+\c@subsection=\count278
+\c@subsubsection=\count279
+\c@paragraph=\count280
+\c@subparagraph=\count281
+\c@figure=\count282
+\c@table=\count283
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen148
@@ -77,7 +78,7 @@ Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaT
 eX and XeLaTeX
-\babel@savecnt=\count283
+\babel@savecnt=\count284
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
 ne 2078.
 LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
@@ -97,7 +98,7 @@ on input line 2111.
 
 (/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count284
+\bbl@dirlevel=\count285
 
 (/usr/share/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 (/usr/share/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian.tex)
@@ -138,9 +139,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
-\Gm@cnth=\count285
-\Gm@cntv=\count286
-\c@Gm@tempcnt=\count287
+\Gm@cnth=\count286
+\Gm@cntv=\count287
+\c@Gm@tempcnt=\count288
 \Gm@bindingoffset=\dimen152
 \Gm@wd@mp=\dimen153
 \Gm@odd@mp=\dimen154
@@ -153,12 +154,12 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 )
 (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count288
+\l__color_backend_stack_int=\count289
 )
 (./relatorio.aux
 Package babel Info: 'brazilian' activates 'portuges' shorthands.
 (babel)             Reported on input line 5.
-)
+ (./PKI.aux))
 \openout1 = `relatorio.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -175,18 +176,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
- (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count289
+\scratchcounter=\count290
 \scratchdimen=\dimen160
 \scratchbox=\box53
-\nofMPsegments=\count290
-\nofMParguments=\count291
+\nofMPsegments=\count291
+\nofMParguments=\count292
 \everyMPshowfont=\toks21
-\MPscratchCnt=\count292
+\MPscratchCnt=\count293
 \MPscratchDim=\dimen161
-\MPnumerator=\count293
-\makeMPintoPDFobject=\count294
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
 \everyMPtoPDFconversion=\toks22
 ) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -235,60 +237,78 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 19.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 19.
-<images/symmetric-encryption-816386435.jpg, id=1, 1260.71pt x 708.6475pt>
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
+/enc/dvips/cm-super/cm-super-t1.enc}]
+<images/symmetric-encryption-816386435.jpg, id=8, 1260.71pt x 708.6475pt>
 File: images/symmetric-encryption-816386435.jpg Graphic file (type jpg)
 <use images/symmetric-encryption-816386435.jpg>
 Package pdftex.def Info: images/symmetric-encryption-816386435.jpg  used on inp
 ut line 30.
 (pdftex.def)             Requested size: 315.17673pt x 177.16144pt.
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts
-/enc/dvips/cm-super/cm-super-t1.enc} <./images/symmetric-encryption-816386435.j
-pg>]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 41.
- [2{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<images/lampsigntable.png, id=23, 566.115pt x 289.83281pt>
+ [1 <./images/symmetric-encryption-816386435.jpg>] [2{/usr/share/texmf-dist/fon
+ts/enc/dvips/cm-super/cm-super-ts1.enc}]
+<images/lampsigntable.png, id=26, 566.115pt x 289.83281pt>
 File: images/lampsigntable.png Graphic file (type png)
 <use images/lampsigntable.png>
 Package pdftex.def Info: images/lampsigntable.png  used on input line 79.
 (pdftex.def)             Requested size: 283.05681pt x 144.91605pt.
-
 [3 <./images/lampsigntable.png>]
-<images/merkle.jpg, id=30, 448.67625pt x 353.32pt>
+<images/merkle.jpg, id=33, 448.67625pt x 353.32pt>
 File: images/merkle.jpg Graphic file (type jpg)
 <use images/merkle.jpg>
 Package pdftex.def Info: images/merkle.jpg  used on input line 124.
 (pdftex.def)             Requested size: 246.77269pt x 194.3266pt.
-<images/unbalanced-merkle.jpg, id=31, 599.23875pt x 404.51125pt>
+<images/unbalanced-merkle.jpg, id=34, 599.23875pt x 404.51125pt>
 File: images/unbalanced-merkle.jpg Graphic file (type jpg)
 <use images/unbalanced-merkle.jpg>
 Package pdftex.def Info: images/unbalanced-merkle.jpg  used on input line 130.
 (pdftex.def)             Requested size: 209.7367pt x 141.58105pt.
-<images/unbalanced-merkleII.png, id=32, 700.86844pt x 532.99126pt>
+<images/unbalanced-merkleII.png, id=35, 700.86844pt x 532.99126pt>
 File: images/unbalanced-merkleII.png Graphic file (type png)
 <use images/unbalanced-merkleII.png>
 Package pdftex.def Info: images/unbalanced-merkleII.png  used on input line 131
 .
 (pdftex.def)             Requested size: 196.24182pt x 149.23653pt.
  [4 <./images/merkle.jpg> <./images/unbalanced-merkle.jpg> <./images/unbalanced
--merkleII.png>] [5] [6] [7] (./relatorio.aux)
+-merkleII.png>] [5] [6]
+\openout2 = `PKI.aux'.
+
+ (./PKI.tex
+Cap\'{\i }tulo 1.
+
+LaTeX Warning: Command \' invalid in math mode on input line 17.
+
+
+LaTeX Warning: Command \' invalid in math mode on input line 17.
+
+Missing character: There is no á in font cmr12!
+Missing character: There is no á in font cmr12!
+[7
+
+
+]) [8] [9
+
+
+] (./relatorio.aux (./PKI.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3849 strings out of 469495
- 62189 string characters out of 5470098
- 492183 words of memory out of 5000000
- 32481 multiletter control sequences out of 15000+600000
- 638104 words of font info for 62 fonts, out of 8000000 for 9000
+ 3900 strings out of 469495
+ 62950 string characters out of 5470098
+ 492886 words of memory out of 5000000
+ 32523 multiletter control sequences out of 15000+600000
+ 639650 words of font info for 64 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  57i,6n,65p,827b,274s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/
@@ -300,14 +320,15 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/publ
 ic/cm-super/sfbx1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfb
 x1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr
-/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-di
-st/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/
-public/cm-super/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
-/sfti1200.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
-Output written on relatorio.pdf (7 pages, 591221 bytes).
+/share/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf-di
+st/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf-dist/fonts/type1/
+public/cm-super/sfrm1440.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super
+/sfrm2074.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb><
+/usr/share/texmf-dist/fonts/type1/public/cm-super/sftt1200.pfb>
+Output written on relatorio.pdf (10 pages, 611738 bytes).
 PDF statistics:
- 121 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 135 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
