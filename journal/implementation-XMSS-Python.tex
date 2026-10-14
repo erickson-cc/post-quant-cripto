@@ -1,0 +1,25 @@
+\chapter{Implementação do Algoritmo XMSS em Python}
+
+Clonei o repositório do liboqs. Compilei a biblioteca como Shared Library.
+Para implementar o algoritmo XMSS em Python utilizando a liboqs, é necessário fazer a ponte entre a biblioteca compilada em C e o ambiente Python, além de utilizar a API específica para esquemas stateful (\textit{sig\_stfl.h}. Clonei o repositório liboqs-python, que é o wrapper da biblioteca para a linguagem python. Vincular a biblioteca compartilhada ao SO executando o comando:
+
+% export LD_LIBRARY_PATH=~/Documents/liboqs/build/lib:$LD_LIBRARY_PATH
+export LD\_LIBRARY\_PATH=~/Documents/liboqs/build/lib:\$LD\_LIBRARY\_PATH
+
+Navegar até o repostiório do liboqs-python, Criar e ativar o ambiente virtual:
+
+% python -m venv .venv
+python -m venv .venv
+
+%source .venv/bin/activate
+source .venv/bin/activate
+
+Instalar o wrapper:
+
+%pip install .
+pip install .
+
+
+Executei um teste para ver se a biblioteca era reconhecida mas o liboqs-python foi projetado para suportar apenas as APIs de algoritmos Stateless, vou poder usar na implementação do SPHINCS+, por agora terei que usar ctypes.
+:q
+:q
