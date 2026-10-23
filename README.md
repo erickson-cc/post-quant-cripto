@@ -3,12 +3,11 @@ Repositório destinado ao grupo de estudos em Criptografia Pós-Quântica
 
 
 # Próximo encontro
-- [x] Separar no exemplo o que é geração de chaves, geração de assinatura e verificação 
-- [x] Estudar Arvores de Merkle
-- [x] Estudar infraestrutura de Chave Pública com certificados de Merkle Tree
-- [x] Certificados X.509
-- [x] Estudar XMSS
 
-- [ ] Randombytes.h/.c
-- [ ] PQClean
-- [ ] Algoritmo aleatorização ESP32
+- [ ] Estudar niveis de segurança SPHINCS+
+- [ ] Incluir seção de avaliação no relatório
+- [ ] ajustar relatorio, verificação de assinatura no exemplo
+- [ ] ajustar wots+ (ver se ele permite escolher a quantidade de bits do hash {bitmask})
+- [ ] Colocar referências
+- [ ] Retomar o estudo no XMSS e expandir no relatório
+- [ ] Apresentar Figura XMSS
