@@ -11,3 +11,8 @@ Repositório destinado ao grupo de estudos em Criptografia Pós-Quântica
 - [ ] Colocar referências
 - [ ] Retomar o estudo no XMSS e expandir no relatório
 - [ ] Apresentar Figura XMSS
+
+- [ ] Estudar a task do FreeRTOS e tentar implementar múltiplas tasks em sequência sem paralelismo
+- [ ] Testes após o mesmo algoritmo recompilado varias vezes
+- [ ] Mexer nos parâmetros da task
+- [ ] Testar dentro do loop
