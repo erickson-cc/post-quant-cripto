@@ -1,4 +1,20 @@
 \chapter{Benchmarks de PQC no ESP32}
 
 \section{xTaskCreatePinnedToCore}
-O método \texttt{loop\(\)} padrão do Arduino limita a stack de execução para apenas 8Kb
+O método \texttt{loop\(\)} padrão do Arduino limita a stack de execução para apenas 8Kb. Para isso, podemos utilizar a função xTaskCreatePinnedToCore, que nos permite criar uma thread independente e fixá-la no Core 0 (focado em Wifi, bluetooth e Sistema) ou no Core 1 (onde o sistema arduino roda por padrão). Existe também a função xTaskCreate, que deixa a decisão do core utilizado para o FreeRTOS (tskNO_AFFINITY). Os principais parâmetros dessa função a serem vistos aqui são:
+\begin{itemize}
+	\item usStackDepth (Tamanho da stack alocada em bytes)
+	\item pvParameters (Parâmetros passados para a tarefa)
+	\item uxPriority (Prioridade no agendador)
+	\item pxCreatedTask (Handler para controle)
+	\item xCoreId (Core 0 ou 1)
+\end{itemize}
+
+Uma alternativa para criar a task seria definir globalmente o tamanho da stack (SET_LOOP_TASK_STACK_SIZE) e colocar o código dentro do loop. Afinidade com o core 1. Precisaria criar um delay em loop ao final do código para evitar o Watchdog Timer Reset.
+
+\subsection{usStackDepth}
+Inicio todos os benchmarks com 10240 e pretendo ir reduzindo de acordo com a quantidade de memória disponível durante o teste. Se um algoritmo de segurança demorar 1,8 segundos (como o sphincs-sha2-256f-simple) dentro do loop() sem liberar tempo de processador, o Task Watchdog Timer (TWDT) do ESP32 pode interpretar que a aplicação travou e reiniciar o chip no meio do teste.
+\subsection{pvParameters}
+\subsection{uxPriority}
+\subsection{pxCreatedTask}
+\subsection{xCoreId}
